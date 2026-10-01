@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat Embed Test</title>
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222}</style>
+</head>
+<body>
+<h1>Web Chatbot embed test</h1>
+<p>This page is on a different domain (github.io). Click the purple bubble in the bottom-right corner to open the chatbot.</p>
+
+<!-- Web Chatbot Embed -->
+<div id="gcb-bubble" onclick="document.getElementById('gcb-frame').style.display='';this.style.display='none'" style="position:fixed;bottom:24px;right:24px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 4px 20px rgba(102,126,234,0.4);cursor:pointer;z-index:9999;display:flex;align-items:center;justify-content:center">
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+</div>
+<iframe id="gcb-frame"
+  src="https://app.footfallz.com/gcb/Simranwali29"
+  style="display:none;position:fixed;top:24px;bottom:24px;right:24px;width:400px;height:calc(100vh - 48px);height:calc(100dvh - 48px);border:none;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.16);z-index:9999;"
+  allow="clipboard-write"
+></iframe>
+<script>
+window.addEventListener("message",function(e){
+  if(e.data&&e.data.type==="gcb-close"){
+    document.getElementById("gcb-frame").style.display="none";
+    document.getElementById("gcb-bubble").style.display="flex";
+  }
+});
+</script>
+</body>
+</html>
